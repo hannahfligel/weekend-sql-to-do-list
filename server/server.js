@@ -39,3 +39,13 @@ app.post( '/todo', ( req, res )=>{
         res.sendStatus(500);
     })
 })
+
+app.delete( '/todo', (req, res)=> {
+    console.log( 'todo delete hit:', req.query );
+    const queryString = `DELETE FROM todo WHERE id='${req.query.id}';`;
+    pool.query( queryString ).then( ( results )=>{
+        res.sendStatus(200);
+    }).catch( (err)=>{
+        res.sendStatus(500);
+    })
+})

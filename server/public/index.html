@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weekend To Do App</title>
+    <link rel="stylesheet" href="bootstrap-5.1.2-dist/css/bootstrap.css">
+    <script src="bootstrap-5.1.2-dist/js/bootstrap.bundle.js"></script>
     <script src="vendors/jquery-3.6.0.min.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/style.css">
@@ -15,7 +17,21 @@
     
     <div id="inputDiv">
         <input type="text" placeholder="task" id="taskIn">
-        <input type="text" placeholder="category" id="categoryIn">
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a data-value="home" class="dropdown-item categoryIn" href="#">Home</a></li>
+              <li><a data-value="work" class="dropdown-item categoryIn" href="#">work</a></li>
+              <li><a data-value="other" class="dropdown-item categoryIn" href="#">Other</a></li>
+            </ul>
+          </div>
+
+        <!-- <input type="text" placeholder="category" class="categoryIn"> -->
+
+
         <input type="text" placeholder="due date" id="dueDateIn">
         <button id="addTaskButton">Add</button>
     </div>
