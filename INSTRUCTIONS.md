@@ -15,11 +15,11 @@ You are going to create a 'TO DO' application. This type of application is very 
 
 [x] Create a front end experience that allows a user to create a Task.
 [x] When the Task is created, it should be stored inside of a database (SQL)
-[] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
-[] Each Task should have an option to 'Complete' or 'Delete'.
+[x] Whenever a Task is created the front end should refresh to show all tasks that need to be completed.
+[x] Each Task should have an option to 'Complete' or 'Delete'.
 [] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be  'checked off'. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
-[] Whether or not a Task is complete should also be stored in the database.
-[] Deleting a Task should remove it both from the front end as well as the Database.
+[x] Whether or not a Task is complete should also be stored in the database.
+[x] Deleting a Task should remove it both from the front end as well as the Database.
 
 ### Styling
 
@@ -63,3 +63,43 @@ For each of your strech goals, you will be practicing git branching. Please refe
 - `feature-time-completed` 
 
     - [ ]  Add the ability to record when a task was completed. Show the completed date on the frontend in a pretty format.
+
+
+
+
+Phase 1: Basic Setup
+---
+
+[x] ```git init```
+[x] ```npm init```
+[x] ```npm install express pg```
+[x] spin up server
+[x] serve index.html/scripts/css
+
+Phase 2 - pool setup
+---
+
+[x] create a db/table x
+[x] create pool module x
+[x] require in server.js x
+[x] make GET route w/ ```SELECT * FROM tableName``` x
+[x] test in browser x
+[x] GET call on page load
+
+Phase 3 - interface/POST
+---
+
+[x] interface for displaying messages x
+[x] interface for adding a message x
+[x] capture user input & send to server via POST x
+[x] input new message into db in POST route s
+
+Phase 4 - delete
+---
+
+[x] display messages on DOM x
+[x] add a "delete" button with data-id tag x
+[] test clieck handler with $( this ).data( 'id' ) x
+[] send DELETE req w/ ID x
+[] delete message from db x
+[] repeat for PUT x

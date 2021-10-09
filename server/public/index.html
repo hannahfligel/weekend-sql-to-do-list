@@ -13,33 +13,66 @@
 
 </head>
 <body>
-    <h1>Weekend To Do App</h1>
-    
-    <div id="inputDiv">
-        <input type="text" placeholder="task" id="taskIn">
+  <div class="container">
+    <h1>To Do List</h1>
+    <br>
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a data-value="home" class="dropdown-item categoryIn" href="#">Home</a></li>
-              <li><a data-value="work" class="dropdown-item categoryIn" href="#">work</a></li>
-              <li><a data-value="other" class="dropdown-item categoryIn" href="#">Other</a></li>
-            </ul>
+    <form>
+      <!-- fieldset and legend are created for the purpose of accessability -->
+      <fieldset>
+        <legend>Add Task</legend>
+          <div class="row">
+            <div class="mb-3 col-5">
+              <!-- for is the id you want to target -->
+              <label for="taskIn" class="form-label">Task</label>
+              <input type="text" class="form-control" placeholder="Enter task here..." id="taskIn">
+            </div>
+            <div class="mb-3 col">
+              <!-- for is the id you want to target -->
+              <label for="dueDateIn" class="form-label">Due date</label>
+              <input type="date" class="form-control" placeholder="Due date" id="dueDateIn">
+            </div>
+            
+          
+            <div class="dropdown mb-3 col align-items-end">
+              <label class="form-label" for="dropdownMenuButton1">Select category</label>
+              <button class="form-control btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Category
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a data-value="home" class="dropdown-item categoryIn" href="#">Home</a></li>
+                <li><a data-value="work" class="dropdown-item categoryIn" href="#">work</a></li>
+                <li><a data-value="other" class="dropdown-item categoryIn" href="#">Other</a></li>
+              </ul>
+            </div>
+            <div class="mb-3 col-1">
+              <label class="form-label" for="addTaskButton">Add</label>
+              <button class="form-control btn btn-primary" id="addTaskButton">Add +</button>
+            </div>
           </div>
+      </fieldset>
+    </form>
 
-        <!-- <input type="text" placeholder="category" class="categoryIn"> -->
-
-
-        <input type="text" placeholder="due date" id="dueDateIn">
-        <button id="addTaskButton">Add</button>
-    </div>
-
-    <div id="outputDiv">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col">Category</th>
+          <th scope="col">Due date</th>
+          <th scope="col">Complete</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody id="todoOut">
+      </tbody>
+    </table>
+  </div>  
+    
+    <!-- <div id="outputDiv">
         <ul id="todoOut">
 
         </ul>
-    </div>
+    </div> -->
+    
 </body>
 </html>

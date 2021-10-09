@@ -2,7 +2,7 @@
 const express = require( 'express' );
 const app = express();
 const bodyParser = require( 'body-parser' );
-// must require modules to use 'em
+// must require modules to use them
 const pool = require( './modules/pool' );
 // uses
 app.use( express.static( 'server/public' ) );
@@ -18,6 +18,8 @@ app.listen( port, ()=>{
 
 app.get('/todo', (req, res)=>{
     const queryString = `SELECT * FROM todo`//todo is the table name
+    //get all todo list items from db
+    //queryString is now the query that selects everything from the todo table
     pool.query( queryString ).then( (results)=>{
         res.send(results.rows);
     }).catch( (err)=>{
@@ -25,7 +27,6 @@ app.get('/todo', (req, res)=>{
         res.sendStatus( 500 );
     })
 })
-
 
 app.post( '/todo', ( req, res )=>{
     console.log( '/todo POST:', req.body );
@@ -49,3 +50,15 @@ app.delete( '/todo', (req, res)=> {
         res.sendStatus(500);
     })
 })
+
+app.put( '/todo', (req, res)=>{
+    console.log( '/todo PUT:', req.query );
+    let queryString = `UPDATE "todo" SET complete=true WHERE id=${ req.query.id };`
+    pool.query( queryString ).then( ( results )=>{
+        res.sendStatus( 200 );
+    }).catch( (err)=>{
+        console.log( err );
+        res.sendStatus( 500 );
+    })
+})
+
