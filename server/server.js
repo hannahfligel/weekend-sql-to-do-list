@@ -52,8 +52,8 @@ app.delete( '/todo', (req, res)=> {
 })
 
 app.put( '/todo', (req, res)=>{
-    console.log( '/todo PUT:', req.query );
-    let queryString = `UPDATE "todo" SET complete=true WHERE id=${ req.query.id };`
+    console.log( '/todo PUT req.query:', req.query );
+    let queryString = `UPDATE "todo" SET status=TRUE WHERE id=${ req.query.id };`
     pool.query( queryString ).then( ( results )=>{
         res.sendStatus( 200 );
     }).catch( (err)=>{
@@ -61,4 +61,3 @@ app.put( '/todo', (req, res)=>{
         res.sendStatus( 500 );
     })
 })
-

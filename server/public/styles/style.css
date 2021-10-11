@@ -6,6 +6,38 @@
 table{
     width: 80%;
     margin: auto;
+    margin-bottom: 100px;
     /* margin-left: 10%;
     margin-right: 10%; */
+}
+
+body{
+    margin-top: 30px;
+    background-color: #F6FAFB;
+}
+
+.cardContainer{
+    box-shadow: 2px 4px 10px 3px #00000035;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.selectCategory{
+    background-color: #a6a8af;
+}
+
+.cardInfo{
+    font-size: 24px;
+}
+
+.trashIcon{
+    color: red;
+    font-size: 32px;
+}
+
+.deleteCol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
