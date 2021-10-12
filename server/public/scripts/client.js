@@ -23,102 +23,97 @@ function getListItem(){
             if(!response[i].status){
                 el.append(`
                 <div class="cardContainer col">
-                <div class="row">
-                    <div class="col-4">
-                        <h6>Task</h6>
-                        <p class="cardInfo">${response[i].task}</p>
-                    </div>
-                    <div class="col">
-                        <h6>Category</h6>
-                        <p class="cardInfo">${response[i].category}</p>
-                    </div>
-                    <div class="col">
-                        <h6>Due-date</h6>
-                        <p class="cardInfo">${response[i].due_date}</p>
-                    </div>
-                    <div class="col">
-                        <h6>Status</h6>
-                        <button data-id="${response[i].id}" class="btn btn-danger completeItem">Incomplete</button>
+                    <div class="row">
+                        <div class="col-4">
+                            <h6>Task</h6>
+                            <p class="cardInfo">${response[i].task}</p>
                         </div>
-                    <div class="col deleteCol">
+                        <div class="col">
+                            <h6>Category</h6>
+                            <p class="cardInfo">${response[i].category}</p>
+                        </div>
+                        <div class="col">
+                            <h6>Due-date</h6>
+                            <p class="cardInfo">${response[i].due_date}</p>
+                        </div>
+                        <div class="col">
+                            <h6>Status</h6>
+                            <button data-id="${response[i].id}" class="btn btn-danger completeItem">Incomplete</button>
+                        </div>
 
-                    <!-- Button trigger modal -->
+                        <div class="col deleteCol">
+                            <!-- Button trigger modal -->
+                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${response[i].id}" class="trashIcon fas fa-trash-alt"></i>
+                        </div>
+                    </div><!-- end row -->
 
-                    <i data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${response[i].id}" class="trashIcon fas fa-trash-alt"></i>
-
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the task?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                <button data-id="${response[i].id}" type="button" class="deleteConfirm btn btn-primary">Yes, delete task</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete the task?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button data-id="${response[i].id}" type="button" class="deleteConfirm btn btn-primary">Yes, delete task</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div> `)
-
+            </div> `)//end el.append
             }//end if 
             else{
                 el.append(`
                 <div class="cardContainer col">
-                <div class="row">
-                <div class="col-4">
-                    <h6>Task</h6>
-                    <p class="cardInfo">${response[i].task}</p>
-                </div>
-                <div class="col">
-                    <h6>Category</h6>
-                    <p class="cardInfo">${response[i].category}</p>
-                </div>
-                <div class="col">
-                    <h6>Due-date</h6>
-                    <p class="cardInfo">${response[i].due_date}</p>
-                </div>
-                <div class="col">
-                    <h6>Status</h6>
-                    <button data-id="${response[i].id}" class="btn btn-success completeItem">complete</button>
-                </div>
-                <div class="col deleteCol">
-                <!-- Button trigger modal -->
+                    <div class="row">
+                        <div class="col-4">
+                            <h6>Task</h6>
+                            <p class="cardInfo">${response[i].task}</p>
+                        </div>
+                        <div class="col">
+                            <h6>Category</h6>
+                            <p class="cardInfo">${response[i].category}</p>
+                        </div>
+                        <div class="col">
+                            <h6>Due-date</h6>
+                            <p class="cardInfo">${response[i].due_date}</p>
+                        </div>
+                        <div class="col">
+                            <h6>Status</h6>
+                            <button data-id="${response[i].id}" class="btn btn-success completeItem">complete</button>
+                        </div>
 
-                <i data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${response[i].id}" class="trashIcon fas fa-trash-alt"></i>
-            
-
-                </div>
-                </div>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    Are you sure you want to delete the task?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button data-id="${response[i].id}" type="button" class="deleteConfirm btn btn-primary">Yes, delete task</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div> `)
-            }//end else 
+                        <div class="col deleteCol">
+                            <!-- Button trigger modal -->
+                            <i data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="${response[i].id}" class="trashIcon fas fa-trash-alt"></i>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Action Confirmation</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Are you sure you want to delete the task?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                    <button data-id="${response[i].id}" type="button" class="deleteConfirm btn btn-primary">Yes, delete task</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> `)//end el.append
+            }//end else
         }//end for 
     }).catch(function(err){
         console.log('error! check consol for more details!');
@@ -134,24 +129,31 @@ function addTask(){
         category: category,
         due_date: $(`#dueDateIn`).val()
     }
-    $.ajax({
-        method: 'POST',
-        url: '/todo',
-        data: objectToSend
-    }).then(function( response ){
-        console.log( "success", response )
-        getListItem();
-        $('#taskIn').val('');
-        //reset category variable to an empty string 
-        category="";
-        //set #dropdownCategory to an empty string 
-        $('#dropdownCategory').empty();
-        //append new #dropdownCategory 
-        $('#dropdownCategory').append("select category");
-        $('#dueDateIn').val('')
-    }).catch(function(err){
-        console.log("error! check consol for more details!")
-    })
+    //if an input is missing, create an alert 
+    if(objectToSend.task=== "" || objectToSend.category === "" || objectToSend.due_date === "" ){
+        alert("One of more fields are empty")
+    }
+    //else, post the response 
+    else{
+        $.ajax({
+            method: 'POST',
+            url: '/todo',
+            data: objectToSend
+        }).then(function( response ){
+            console.log( "success", response )
+            getListItem();
+            $('#taskIn').val('');
+            //reset category variable to an empty string 
+            category="";
+            //set #dropdownCategory to an empty string 
+            $('#dropdownCategory').empty();
+            //append new #dropdownCategory 
+            $('#dropdownCategory').append("select category");
+            $('#dueDateIn').val('')
+        }).catch(function(err){
+            console.log("error! check consol for more details!")
+        })
+    }//end else 
 }//end addTask
 
 
