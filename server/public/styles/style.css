@@ -21,11 +21,9 @@ body{
     padding: 20px;
     border-radius: 10px;
     background-color: white;
+    margin-bottom: 25px;
 }
 
-.selectCategory{
-    background-color: #a6a8af;
-}
 
 .cardInfo{
     font-size: 24px;
