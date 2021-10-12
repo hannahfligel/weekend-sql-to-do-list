@@ -19,7 +19,8 @@ function getListItem(){
         el=$('#todoOut1');
         el.empty();
         // append each todo item to DOM
-        for(i=0; i<response.length; i++){
+        //reverse loop to bring the new to do item to the top of the list 
+        for(i=response.length-1; i>=0; i--){
             if(!response[i].status){
                 el.append(`
                 <div class="cardContainer col">

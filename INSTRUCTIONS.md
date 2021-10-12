@@ -53,12 +53,13 @@ For each of your strech goals, you will be practicing git branching. Please refe
 
 - `feature-confirm-delete`
 
-    - [ ]  In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
+    - [x]  In whatever fashion you would like, create an 'are you sure: yes / no' option when deleting a task.
         - Some styled options are [Bootstrap Modal](https://getbootstrap.com/docs/4.0/components/modal/) or [Sweet Alerts](https://sweetalert.js.org/guides/): Use the CDN option.
 
 - `feature-ordering-task-query` 
 
-    - [ ]  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
+    - [x]?  Research [Query Params](https://expressjs.com/en/api.html#req.query) to have the request reverse the order of the returned todos. 
+        - could not figure out the query but did a reversed loop instead :) 
     
 - `feature-time-completed` 
 
