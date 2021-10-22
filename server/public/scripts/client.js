@@ -75,7 +75,7 @@ function getListItem(){
                     <div class="row">
                         <div class="col-4">
                             <h6>Task</h6>
-                            <p class="cardInfo">${response[i].task}</p>
+                            <p class="complete cardInfo">${response[i].task}</p>
                         </div>
                         <div class="col">
                             <h6>Category</h6>

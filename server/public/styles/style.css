@@ -39,3 +39,8 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.complete{
+    text-decoration: line-through;
+    color: rgb(97, 97, 97);
+}
